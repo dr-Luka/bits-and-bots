@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+nav ul {
+  border-bottom: 2px dotted black;
+  display: flex;
+}
+ul li {
+  margin-right: 25px;
+}
+.carousel {
+  width: 80%;
+  margin: 0 auto;
+}
+body {
+  background-color: rgb(152, 142, 141);
+}
