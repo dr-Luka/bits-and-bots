@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
-
+import GamesList from "./GamesList";
 function Browse() {
   return (
     <>
@@ -28,7 +28,9 @@ function Browse() {
         </Carousel.Item>
       </Carousel>
       <h2>Game Collection</h2>
-      <div className="games-library"></div>
+      <div className="games-container">
+        <GamesList />
+      </div>
     </>
   );
 }
