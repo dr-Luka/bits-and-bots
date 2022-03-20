@@ -24,17 +24,19 @@ function Checkout() {
 
   function checkOutUser(e) {
     e.preventDefault();
-    if (
-      form.name.length > 0 &&
-      form.address.length > 0 &&
-      form.cardNumber.length > 0 &&
-      form.cardDate.length > 0 &&
-      form.cardCvv.length > 0
-    ) {
-      setCart([]);
-      history.push("/browse");
-    } else {
-      console.log("ERROR");
+    if (window.confirm("Do you want to pay and check out?")) {
+      if (
+        form.name.length > 0 &&
+        form.address.length > 0 &&
+        form.cardNumber.length > 0 &&
+        form.cardDate.length > 0 &&
+        form.cardCvv.length > 0
+      ) {
+        setCart([]);
+        history.push("/browse");
+      } else {
+        console.log("ERROR");
+      }
     }
   }
 
@@ -94,7 +96,7 @@ function Checkout() {
             />
           </div>
           <button className="add-cart card-button" type="submit">
-            Pay and Check Out
+            Check Out
           </button>
         </form>
       </div>
