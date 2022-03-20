@@ -18,10 +18,6 @@ export default function GamesCard({ id, name, image_url, price }) {
     setCart((oldCart) => oldCart.filter((c) => c.id !== id));
   };
 
-  const cartSum = cart.reduce((prev, curr) => prev + curr.price, 0);
-
-  console.log(cartSum);
-
   return (
     <div className="card">
       <div className="card-info">

@@ -6,14 +6,18 @@
   color: white;
   display: block;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 .read-more {
-  background-color: rgb(68, 68, 244);
+  background-color: #4444f4;
   margin-bottom: 10px;
 }
 .add-cart {
-  background-color: rgb(120, 203, 97);
+  background-color: #78cb61;
 }
 .remove-cart {
-  background-color: rgb(208, 76, 29);
+  background-color: #d04c1d;
+}
+.disabled {
+  background-color: gray;
 }

@@ -1,31 +1,59 @@
 import NavBar from "../layout/Nav.js";
+import { FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 export default function Cart() {
-  const cartGames = localStorage.getItem("Cart");
-  console.log(cartGames);
+  const [cart, setCart] = useContext(CartContext);
 
-  // cartGames.forEach((game) => {
-  //   console.log(game);
-  // });
+  const handleRemove = (e, id) => {
+    e.preventDefault();
+    setCart((oldCart) => oldCart.filter((c) => c.id !== parseInt(id)));
+  };
+
+  const cartSum = cart.reduce((prev, curr) => prev + curr.price, 0);
 
   return (
     <>
       <div className="page">
         <NavBar />
-
         <h1>Your Cart</h1>
         <div className="cart-container">
-          <div className="cart-item">
-            <div className="cart-item-flex">
-              <img
-                className="cart-img"
-                src="https://res.cloudinary.com/learnx-no/image/upload/v1646683449/small_mlb21_0b3214ff5d.jpg"
-              />
-              <div className="center">MLB Show 21</div>
+          {cart.length ? (
+            cart.map((game) => (
+              <div className="cart-item" key={game.id}>
+                <div className="cart-item-flex">
+                  <FaTrash
+                    className="cart-trash center"
+                    onClick={(e) => handleRemove(e, game.id)}
+                  />
+                  <img className="cart-img" src={game.image_url} />
+                  <div className="center">{game.name}</div>
+                </div>
+                <div className="center cart-item-flex">
+                  <p>{game.price}$</p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="cart-empty">
+              Cart is empty, go to <Link to="/browse">Browse</Link> and add
+              games!
             </div>
-            <div className="center">19.95$</div>
-          </div>
+          )}
         </div>
+        {cart.length ? (
+          <>
+            <div className="cart-total">Total Price: {cartSum}$</div>
+            <Link to="/checkout">
+              <button className="add-cart card-button">Check Out</button>
+            </Link>
+          </>
+        ) : (
+          <button className="add-cart card-button disabled">Check Out</button>
+        )}
       </div>
     </>
   );
