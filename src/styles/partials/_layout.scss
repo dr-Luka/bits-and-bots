@@ -2,7 +2,9 @@
   padding: 0px;
   margin: 0px;
 }
-
+a {
+  text-decoration: none;
+}
 nav ul {
   border-bottom: 2px dotted black;
   display: flex;
@@ -18,4 +20,16 @@ ul li {
 h2 {
   text-align: center;
   margin-top: 30px;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+.filter-handle {
+  display: block;
+  padding: 5px 10px;
+  margin: 30px auto 0px auto;
+}
+
+.nav-link {
 }

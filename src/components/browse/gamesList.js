@@ -7,7 +7,6 @@ export default function GamesList() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [cart, setCart] = useState(localStorage.getItem("Cart"));
 
   const [displayData, setDisplayData] = useState(games);
 
@@ -58,11 +57,10 @@ export default function GamesList() {
             <GamesCard
               key={name}
               id={id}
-              cart={cart}
-              setCart={setCart}
               name={name}
               price={price}
               image_url={image_url}
+              game={game}
             />
           );
         })}

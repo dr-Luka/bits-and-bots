@@ -1,7 +1,19 @@
 .card-button {
-  padding: 5px 10px;
+  width: 150px;
+  padding: 5px;
   border-radius: 5px;
-  background-color: rgb(68, 68, 244);
   border: none;
   color: white;
+  display: block;
+  margin: 0 auto;
+}
+.read-more {
+  background-color: rgb(68, 68, 244);
+  margin-bottom: 10px;
+}
+.add-cart {
+  background-color: rgb(120, 203, 97);
+}
+.remove-cart {
+  background-color: rgb(208, 76, 29);
 }

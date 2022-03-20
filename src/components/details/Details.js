@@ -1,9 +1,11 @@
 import DetailsItem from "./DetailsItem.js";
+import NavBar from "../layout/Nav.js";
+
 function Details() {
   return (
     <>
-      <div className="details-page">
-        <h1>Details</h1>
+      <div className="page">
+        <NavBar />
         <DetailsItem />
       </div>
     </>

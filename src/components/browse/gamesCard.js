@@ -1,24 +1,26 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-export default function GamesCard({
-  id,
-  cart,
-  setCart,
-  name,
-  image_url,
-  price,
-}) {
-  useEffect(
-    function () {
-      localStorage.setItem("Cart", cart);
-    },
-    [cart]
-  );
+import { useEffect, useContext } from "react";
 
-  const handleAddToCart = (e, id) => {
+import { CartContext } from "../../contexts/CartContext";
+
+export default function GamesCard({ id, name, image_url, price }) {
+  const [cart, setCart] = useContext(CartContext);
+
+  const handleAddToCart = (e) => {
     e.preventDefault();
-    setCart((oldCart) => [...oldCart, id]);
+    if (cart.find((c) => c.id === parseInt(id))) return 0;
+    const item = { id, name, image_url, price };
+    setCart((oldCart) => [...oldCart, item]);
   };
+
+  const handleRemove = (e) => {
+    e.preventDefault();
+    setCart((oldCart) => oldCart.filter((c) => c.id !== id));
+  };
+
+  const cartSum = cart.reduce((prev, curr) => prev + curr.price, 0);
+
+  console.log(cartSum);
 
   return (
     <div className="card">
@@ -29,13 +31,24 @@ export default function GamesCard({
         <p className="card-price">{price}$</p>
       </div>
       <Link to={`details/${id}`}>
-        <button className="card-button">Read More</button>
+        <button className="card-button read-more">Read More</button>
       </Link>
-      {/* {cart.includes(id) ? (
-        <button>Added</button>
+
+      {cart && cart.find((c) => c.id === id) ? (
+        <button
+          className="card-button remove-cart"
+          onClick={(e) => handleRemove(e)}
+        >
+          Remove from cart
+        </button>
       ) : (
-        <button onClick={(e) => handleAddToCart(e, id)}>Add to cart</button>
-      )} */}
+        <button
+          className="card-button add-cart"
+          onClick={(e) => handleAddToCart(e)}
+        >
+          Add to cart
+        </button>
+      )}
     </div>
   );
 }
