@@ -51,49 +51,51 @@ function Checkout() {
           <p>Total Price: {cartSum}</p>
         </div>
         <form className="checkout-form" onSubmit={(e) => checkOutUser(e)}>
-          <div className="checkout-form-user">
-            <input
-              type="text"
-              placeholder="Name"
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={(e) => handleChange(e)}
-            />
-            <input
-              type="text"
-              placeholder="Address"
-              id="address"
-              name="address"
-              value={form.address}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div className="checkout-form-card">
-            <input
-              type="text"
-              placeholder="Credit Card Number"
-              id="card-number"
-              name="cardNumber"
-              value={form.cardNumber}
-              onChange={(e) => handleChange(e)}
-            />
-            <input
-              type="text"
-              placeholder="Expiration Date"
-              id="card-date"
-              name="cardDate"
-              value={form.cardDate}
-              onChange={(e) => handleChange(e)}
-            />
-            <input
-              type="text"
-              placeholder="CCV"
-              id="card-cvv"
-              name="cardCvv"
-              value={form.cardCvv}
-              onChange={(e) => handleChange(e)}
-            />
+          <div className="form-flex">
+            <div className="checkout-form-user">
+              <input
+                type="text"
+                placeholder="Name"
+                id="name"
+                name="name"
+                value={form.name}
+                onChange={(e) => handleChange(e)}
+              />
+              <input
+                type="text"
+                placeholder="Address"
+                id="address"
+                name="address"
+                value={form.address}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="checkout-form-card">
+              <input
+                type="text"
+                placeholder="Credit Card Number"
+                id="card-number"
+                name="cardNumber"
+                value={form.cardNumber}
+                onChange={(e) => handleChange(e)}
+              />
+              <input
+                type="text"
+                placeholder="Expiration Date"
+                id="card-date"
+                name="cardDate"
+                value={form.cardDate}
+                onChange={(e) => handleChange(e)}
+              />
+              <input
+                type="text"
+                placeholder="CCV"
+                id="card-cvv"
+                name="cardCvv"
+                value={form.cardCvv}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
           </div>
           <button className="add-cart card-button" type="submit">
             Check Out

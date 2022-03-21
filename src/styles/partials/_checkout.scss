@@ -1,6 +1,6 @@
 .order {
   background-color: rgb(195, 195, 195);
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
   font-family: "Roboto";
   padding: 20px;
@@ -22,4 +22,9 @@
 }
 .checkout-form-card {
   margin-bottom: 30px;
+}
+.form-flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

@@ -2,13 +2,11 @@
   background-color: rgb(68, 68, 244);
 }
 .nav-link {
-  color: white;
+  margin-right: 10px;
+  background-color: #78cb61;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 .navbar-brand {
   font-family: "Press Start 2P", cursive;
-}
-.logout-button {
-  background-color: rgb(208, 76, 29);
-  box-shadow: none;
-  border-radius: 5px;
 }

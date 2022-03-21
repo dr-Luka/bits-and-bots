@@ -30,10 +30,7 @@ export default function NavBar() {
                 My Cart
                 <FaShoppingCart />
               </Link>
-              <button
-                className="nav-link logout-button"
-                onClick={() => logout()}
-              >
+              <button className="logout-button" onClick={() => logout()}>
                 Logout
               </button>
             </Nav>

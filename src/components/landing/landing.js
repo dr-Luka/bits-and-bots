@@ -42,7 +42,7 @@ function Landing() {
       if (user.username === loginForm.username) {
         if (user.password === loginForm.password) {
           console.log("Logged in!");
-          localStorage.setItem("LogedIn", true);
+          localStorage.setItem("LoggedIn", true);
           history.push("/browse");
         } else {
           console.log("Wrong password!");
